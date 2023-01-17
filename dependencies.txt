@@ -1,0 +1,6 @@
+Paste this into your project builder:
+-l GL(or another library that provides the OpenGL API) 
+-l m -l glfw
+
+And, if you have Linux:
+-l X11 -l pthread -l Xrandr -l Xi -l dl

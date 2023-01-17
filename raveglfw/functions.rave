@@ -1,0 +1,25 @@
+namespace rglfw {
+    struct Window {}
+    struct Monitor {}
+    struct VideoMode {
+        int w;
+        int h;
+        int rB;
+        int gB;
+        int bB;
+        int refreshRate;
+    }
+
+    extern(linkname: "glfwInit") int Init();
+    extern(linkname: "glfwWindowHint") void WindowHint(int target, int hint);
+    extern(linkname: "glfwGetProcAddress") void* GetProcAddress(char* prn);
+    extern(linkname: "glfwWindowShouldClose") bool WindowShouldClose(rglfw::Window* win);
+    extern(linkname: "glfwSetWindowShouldClose") void SetWindowShouldClose(rglfw::Window* win, bool value);
+    extern(linkname: "glfwSwapBuffers") void SwapBuffers(rglfw::Window* win);
+    extern(linkname: "glfwPollEvents") void PollEvents();
+    extern(linkname: "glfwTerminate") void Terminate();
+    extern(linkname: "glfwGetKey") int GetKey(rglfw::Window* win, int key);
+    extern(linkname: "glfwSetFramebufferSizeCallback") void SetFramebufferSizeCallback(rglfw::Window* win, void(rglfw::Window* window, int width, int height) callback);
+    extern(linkname: "glfwGetMonitors") rglfw::Monitor** GetMonitors(int* cnt);
+    extern(linkname: "glfwGetVideoModes") rglfw::VideoMode* GetVideoModes(rglfw::Monitor* mon, int* cnt);
+}
