@@ -22,4 +22,6 @@ namespace rglfw {
     extern(linkname: "glfwSetFramebufferSizeCallback") void SetFramebufferSizeCallback(rglfw::Window* win, void(rglfw::Window* window, int width, int height) callback);
     extern(linkname: "glfwGetMonitors") rglfw::Monitor** GetMonitors(int* cnt);
     extern(linkname: "glfwGetVideoModes") rglfw::VideoMode* GetVideoModes(rglfw::Monitor* mon, int* cnt);
+    extern(linkname: "glfwCreateWindow") rglfw::Window* CreateWindow(int w, int h, char* title, rglfw::Monitor* m, rglfw::Monitor* s);
+    extern(linkname: "glfwMakeContextCurrent") void MakeContextCurrent(rglfw::Window* window);
 }
