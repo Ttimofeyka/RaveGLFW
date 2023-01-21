@@ -15,13 +15,16 @@ namespace rglfw {
     extern(linkname: "glfwGetProcAddress") void* GetProcAddress(char* prn);
     extern(linkname: "glfwWindowShouldClose") bool WindowShouldClose(rglfw::Window* win);
     extern(linkname: "glfwSetWindowShouldClose") void SetWindowShouldClose(rglfw::Window* win, bool value);
+    extern(linkname: "glfwSetWindowPos") void SetWindowPos(rglfw::Window* window, int x, int y);
     extern(linkname: "glfwSwapBuffers") void SwapBuffers(rglfw::Window* win);
     extern(linkname: "glfwPollEvents") void PollEvents();
     extern(linkname: "glfwTerminate") void Terminate();
     extern(linkname: "glfwGetKey") int GetKey(rglfw::Window* win, int key);
     extern(linkname: "glfwSetFramebufferSizeCallback") void SetFramebufferSizeCallback(rglfw::Window* win, void(rglfw::Window* window, int width, int height) callback);
     extern(linkname: "glfwGetMonitors") rglfw::Monitor** GetMonitors(int* cnt);
+    extern(linkname: "glfwGetMonitorPos") void GetMonitorPos(rglfw::Monitor* m, int* x, int* y);
     extern(linkname: "glfwGetVideoModes") rglfw::VideoMode* GetVideoModes(rglfw::Monitor* mon, int* cnt);
     extern(linkname: "glfwCreateWindow") rglfw::Window* CreateWindow(int w, int h, char* title, rglfw::Monitor* m, rglfw::Monitor* s);
     extern(linkname: "glfwMakeContextCurrent") void MakeContextCurrent(rglfw::Window* window);
+    extern(linkname: "glfwShowWindow") void ShowWindow(rglfw::Window* window);
 }

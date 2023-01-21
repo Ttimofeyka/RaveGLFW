@@ -77,4 +77,7 @@ namespace rglfw {
     alias KeyF10 = 299;
     alias KeyF11 = 300;
     alias KeyF12 = 301;
+
+    alias Visible = 0x00020004;
+    alias Resizable = 0x00020003;
 }
