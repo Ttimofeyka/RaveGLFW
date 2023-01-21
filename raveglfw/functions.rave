@@ -24,6 +24,7 @@ namespace rglfw {
     extern(linkname: "glfwGetMonitors") rglfw::Monitor** GetMonitors(int* cnt);
     extern(linkname: "glfwGetMonitorPos") void GetMonitorPos(rglfw::Monitor* m, int* x, int* y);
     extern(linkname: "glfwGetVideoModes") rglfw::VideoMode* GetVideoModes(rglfw::Monitor* mon, int* cnt);
+    extern(linkname: "glfwGetVideoMode") rglfw::VideoMode* GetVideoMode(rglfw::Monitor* m);
     extern(linkname: "glfwCreateWindow") rglfw::Window* CreateWindow(int w, int h, char* title, rglfw::Monitor* m, rglfw::Monitor* s);
     extern(linkname: "glfwMakeContextCurrent") void MakeContextCurrent(rglfw::Window* window);
     extern(linkname: "glfwShowWindow") void ShowWindow(rglfw::Window* window);
