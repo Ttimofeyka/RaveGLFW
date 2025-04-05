@@ -1,4 +1,4 @@
-namespace rglfw {
+namespace glfw {
     alias ContextVersionMajor = 0x00022002;
     alias ContextVersionMinor = 0x00022003;
     alias GLForwardCompat = 0x00022006;
@@ -80,4 +80,36 @@ namespace rglfw {
 
     alias Visible = 0x00020004;
     alias Resizable = 0x00020003;
+}
+
+namespace glfw {
+    struct Window {}
+    struct Monitor {}
+    struct VideoMode {
+        int w;
+        int h;
+        int rB;
+        int gB;
+        int bB;
+        int refreshRate;
+    }
+
+    extern(linkname: "glfwInit") int Init();
+    extern(linkname: "glfwWindowHint") void WindowHint(int target, int hint);
+    extern(linkname: "glfwGetProcAddress") void* GetProcAddress(char* prn);
+    extern(linkname: "glfwWindowShouldClose") bool WindowShouldClose(glfw::Window* win);
+    extern(linkname: "glfwSetWindowShouldClose") void SetWindowShouldClose(glfw::Window* win, bool value);
+    extern(linkname: "glfwSetWindowPos") void SetWindowPos(glfw::Window* window, int x, int y);
+    extern(linkname: "glfwSwapBuffers") void SwapBuffers(glfw::Window* win);
+    extern(linkname: "glfwPollEvents") void PollEvents();
+    extern(linkname: "glfwTerminate") void Terminate();
+    extern(linkname: "glfwGetKey") int GetKey(glfw::Window* win, int key);
+    extern(linkname: "glfwSetFramebufferSizeCallback") void SetFramebufferSizeCallback(glfw::Window* win, void(glfw::Window* window, int width, int height) callback);
+    extern(linkname: "glfwGetMonitors") glfw::Monitor** GetMonitors(int* cnt);
+    extern(linkname: "glfwGetMonitorPos") void GetMonitorPos(glfw::Monitor* m, int* x, int* y);
+    extern(linkname: "glfwGetVideoModes") glfw::VideoMode* GetVideoModes(glfw::Monitor* mon, int* cnt);
+    extern(linkname: "glfwGetVideoMode") glfw::VideoMode* GetVideoMode(glfw::Monitor* m);
+    extern(linkname: "glfwCreateWindow") glfw::Window* CreateWindow(int w, int h, char* title, glfw::Monitor* m, glfw::Monitor* s);
+    extern(linkname: "glfwMakeContextCurrent") void MakeContextCurrent(glfw::Window* window);
+    extern(linkname: "glfwShowWindow") void ShowWindow(glfw::Window* window);
 }
